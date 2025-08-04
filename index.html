@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>福祉マッチングサイト</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #fffbea;
+      color: #333;
+      text-align: center;
+      padding: 2em;
+    }
+    h1 {
+      color: #fdd835;
+    }
+    select, button {
+      padding: 0.5em 1em;
+      margin: 1em;
+      font-size: 1em;
+    }
+    .result {
+      margin-top: 2em;
+      padding: 1em;
+      border-radius: 10px;
+      background-color: #e0f7fa;
+      display: none;
+    }
+    .logo {
+      margin-top: 1em;
+      max-height: 100px;
+    }
+    .card {
+      border: 2px solid #fdd835;
+      border-radius: 12px;
+      padding: 1.5em;
+      margin: 1.5em auto;
+      max-width: 500px;
+      background-color: #fffde7;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>あなたに合った支援団体を見つけよう</h1>
+
+  <div class="card">
+    <label for="issue">困っていることは？</label><br />
+    <select id="issue">
+      <option value="">選んでください</option>
+      <option value="居場所がない">居場所がない</option>
+      <option value="誰にも相談できない">誰にも相談できない</option>
+      <option value="生活が不安定">生活が不安定</option>
+    </select><br />
+    <button onclick="showResult()">おすすめを表示</button>
+  </div>
+
+  <div class="result" id="result">
+    <h2 id="org-name"></h2>
+    <a id="org-url" href="#" target="_blank">団体のページを見る</a><br />
+    <img id="org-logo" class="logo" src="" alt="団体ロゴ" />
+  </div>
+
+  <script>
+    const organizations = {
+      "居場所がない": {
+        name: "サンカクシャ",
+        url: "https://www.sankakusha.or.jp/",
+        logo: "https://www.sankakusha.or.jp/wp-content/uploads/2022/08/logo.png"
+      },
+      "誰にも相談できない": {
+        name: "ココとも",
+        url: "https://cocotomo.org/",
+        logo: "https://cocotomo.org/wp-content/uploads/2020/04/cocotomo_logo.png"
+      },
+      "生活が不安定": {
+        name: "ほっぷらん",
+        url: "https://hoplan.or.jp/",
+        logo: "https://hoplan.or.jp/wp-content/uploads/2023/07/logo.png"
+      }
+    };
+
+    function showResult() {
+      const issue = document.getElementById("issue").value;
+      const result = document.getElementById("result");
+      const name = document.getElementById("org-name");
+      const url = document.getElementById("org-url");
+      const logo = document.getElementById("org-logo");
+
+      if (organizations[issue]) {
+        const org = organizations[issue];
+        name.textContent = org.name;
+        url.href = org.url;
+        url.textContent = org.url;
+        logo.src = org.logo;
+        result.style.display = "block";
+      } else {
+        result.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
