@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>若者のための支援マッチングサイト</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #4f46e5;
+    }
+
+    .tags {
+      margin: 0.5rem 0;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>困っている若者のための支援さがし</h1>
+  </header>
+
+  <div class="intro">
+    <p>家にいたくない・居場所がない・将来が不安…。<br>そんなとき、力になってくれる団体があります。</p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>サンカクシャ</h2>
+      <div class="tags">#居場所がない #話せる人がいない #安心したい</div>
+      <p>安心して過ごせる居場所と、将来を考えるきっかけが得られます。</p>
+      <a href="https://www.sankakusha.or.jp/" target="_blank">公式サイトを見る</a>
+    </div>
+
+    <div class="card">
+      <h2>ココとも</h2>
+      <div class="tags">#相談したい #ひとりで悩んでる #メンタル不調</div>
+      <p>つながる場所、話せる相手。若者の心に寄り添うサポートがあります。</p>
+      <a href="https://cocotomo.org/" target="_blank">公式サイトを見る</a>
+    </div>
+
+    <div class="card">
+      <h2>ほっぷらん</h2>
+      <div class="tags">#学校に行けない #就労が不安 #生活支援が必要</div>
+      <p>学校や仕事に行けない若者に向けた生活・就労支援を行っています。</p>
+      <a href="https://hoplan.org/" target="_blank">公式サイトを見る</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 福祉マッチングサイト（仮）
+  </footer>
+
+</body>
+</html>
